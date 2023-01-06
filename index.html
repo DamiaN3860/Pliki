@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Praca</title>
+
+    <style>
+        input {
+            width: 100px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+ <div>
+
+
+      SUMA 3 LICZB: <input id="sum1" type="number">
+      <input id="sum2" type="number">
+      <input id="sum3" type="number">
+      <button onclick="sum()">ILE???</button>
+      <br><br>
+
+      ŚREDNIA 3 LICZB: <input id="avg1" type="number">
+      <input id="avg2" type="number">
+      <input id="avg3" type="number">
+      <button onclick="avg()">ILE???</button>
+      <br><br>
+
+      SUMA, RÓŻNICA, ILOCZYN: <input id="sumA2" type="number">
+      <input id="sumB2" type="number">
+      <input id="sumC2" type="number">
+      <button onclick="liczenie()">ILE???</button>
+      <br><br>
+
+      PIERWIASTEK: <input type="number" id="pierwiastek">
+      <button onclick="pierwiastek()">ILE???</button>
+      <br> <br>
+
+      POLE KWADRATU: <input type="number" id="poleKwadratu">
+      <button onclick="poleKwadratu()">ILE???</button>
+      <br> <br>
+
+      POLE PROSTOPADŁOŚCIANU: <input type="number" id="poleProstopadloscianu1">
+      <input type="number" id="poleProstopadloscianu2">
+      <input type="number" id="poleProstopadloscianu3">
+      <button onclick="poleProstopadloscianu()">ILE???</button>
+      <br> <br>
+
+      POLE I OBW KOŁA: <input type="number" id="poleKola">
+      <button onclick="poleKola()">ILE???</button>
+      <br> <br>
+
+      TRASA GDAŃSK -> SZCZECIN: <input type="number" id="paliwko">
+      <button onclick="benzyna()">ILE???</button>
+      <br> <br>
+
+      CENA PALIWA <input type="number" id="benzynaa">
+      DŁUGOŚĆ TRASY:  <input type="number" id="benzynab">
+      SPALANIE:  <input type="number" id="benzynac">
+      <button onclick="benzyna2()">ILE???</button>
+      <br> <br>
+
+
+      ZYSK Z LOKATY: <input type="number" id="kasa">
+      <button onclick="lokata()">ILE???</button>
+      <br> <br>
+
+      <p id="wynik"></p>
+
+      <br>
+
+      <script>
+        function sum() {
+            let a = document.getElementById("sum1").value;
+            let b = document.getElementById("sum2").value;
+            let c = document.getElementById("sum3").value;
+            let wynik = parseInt(a) + parseInt(b) + parseInt(c);
+            document.getElementById("wynik").innerHTML = wynik;
+        }
+
+        function avg() {
+            let a = document.getElementById("avg1").value;
+            let b = document.getElementById("avg2").value;
+            let c = document.getElementById("avg3").value;
+            let wynik = (parseInt(a) + parseInt(b) + parseInt(c)) / 3;
+            document.getElementById("wynik").innerHTML = wynik;
+        }
+
+        function liczenie() {
+            let a = document.getElementById("sumA2").value;
+            let b = document.getElementById("sumB2").value;
+            let c = document.getElementById("sumC2").value;
+            let wynik = parseInt(a) + parseInt(b) + parseInt(c);
+            let wynik2 = parseInt(a) - parseInt(b) - parseInt(c);
+            let wynik3 = parseInt(a) * parseInt(b) * parseInt(c);
+            document.getElementById("wynik").innerHTML = "Suma: " + wynik + "<br>Różnica: " + wynik2 + "<br>Iloczyn: " + wynik3;
+        }
+
+        function pierwiastek() {
+            let a = document.getElementById("pierwiastek").value;
+            let wynik = Math.sqrt(a);
+            document.getElementById("wynik").innerHTML = wynik;
+        }
+
+        function poleKwadratu() {
+            let a = document.getElementById("poleKwadratu").value;
+            let wynik = a * a;
+            document.getElementById("wynik").innerHTML = wynik;
+        }
+
+        function poleProstopadloscianu() {
+            let a = document.getElementById("poleProstopadloscianu1").value;
+            let b = document.getElementById("poleProstopadloscianu2").value;
+            let c = document.getElementById("poleProstopadloscianu3").value;
+            let wynik = 2 * (a * b + a * c + b * c);
+            document.getElementById("wynik").innerHTML = wynik;
+        }
+
+        function poleKola() {
+            let a = document.getElementById("poleKola").value;
+            let wynik = a*a*Math.PI;
+            let wynik2 = a*2*Math.PI;
+            document.getElementById("wynik").innerHTML = "Pole: " + wynik + " Obwód: " + wynik2;
+        }
+
+        function benzyna() {
+            let a = document.getElementById("paliwko").value;
+            let wynik = 360/(100/8)*a;
+            document.getElementById("wynik").innerHTML = wynik;
+        }
+
+        function lokata() {
+            let a = document.getElementById("kasa").value;
+            let wynik = a*0.08-(a*0.08*0.09);
+            document.getElementById("wynik").innerHTML = wynik;
+        }
+
+        function benzyna2() {
+            let a = document.getElementById("benzynaa").value;
+			            let b = document.getElementById("benzynab").value;
+						            let c = document.getElementById("benzynac").value;
+            let wynik = (b/(100/a))*c;
+            document.getElementById("wynik").innerHTML = wynik;
+        }
+    </script>
+    <img src="11.png">
+ </div>
+
+
+</body>
+
+</html>
